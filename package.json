@@ -1,0 +1,76 @@
+{
+  "name": "wouldyourather",
+  "version": "1.0.0",
+  "description": "The new wouldyourather.co.uk website source code`",
+  "main": "src/server/index.js",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "serve": "webpack-serve webpack.config.server",
+    "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
+    "lint-styles": "stylelint './src/**/*.css'",
+    "lint": "npm run lint-scripts && npm run lint-styles",
+    "postversion": "git push && git push --tags && npm publish",
+    "preversion": "npm run lint && npm run test && npm run build",
+    "precommit": "lint-staged",
+    "commit": "git-cz",
+    "prepush": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hutber/wouldyourather.git"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hutber/wouldyourather/issues"
+  },
+  "homepage": "https://www.wouldyourather.co.uk",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/hutber-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "babel-eslint": "^8.2.2",
+    "babel-loader": "^8.0.0-beta",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.14.3",
+    "hutber-conventional-changelog": "^2.0.1",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "universal-hot-reload": "^1.0.6",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-serve": "^0.2.0"
+  }
+}
