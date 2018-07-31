@@ -7,5 +7,5 @@ hydrate(
   <BrowserRouter>
     <App />
   </BrowserRouter>,
-  document.getElementById('reactDiv')
+  document.getElementById('wouldyourather')
 );

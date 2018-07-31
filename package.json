@@ -4,7 +4,7 @@
   "description": "The new wouldyourather.co.uk website source code`",
   "main": "src/server/index.js",
   "scripts": {
-    "start": "node src/server/index.js",
+    "start": "NODE_ENV=dev node src/server/index.js",
     "serve": "webpack-serve webpack.config.server",
     "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
     "lint-styles": "stylelint './src/**/*.css'",
@@ -48,6 +48,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
+    "webpack-config": "^7.5.0",
     "webpack-node-externals": "^1.6.0"
   },
   "devDependencies": {
@@ -55,6 +56,7 @@
     "@babel/core": "^7.0.0-beta.42",
     "@babel/preset-env": "^7.0.0-beta.42",
     "@babel/preset-react": "^7.0.0-beta.42",
+    "@babel/register": "^7.0.0-beta.42",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^8.0.0-beta",
     "eslint": "^4.19.1",
@@ -67,8 +69,15 @@
     "husky": "^0.14.3",
     "hutber-conventional-changelog": "^2.0.1",
     "lint-staged": "^7.2.0",
+    "postcss-fontpath": "^1.0.0",
+    "postcss-load-config": "^2.0.0",
+    "postcss-loader": "^2.1.6",
+    "postcss-mixins": "^6.2.0",
+    "postcss-nested": "^3.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "postcss-strip-inline-comments": "^0.1.5",
     "prettier": "^1.13.7",
-    "universal-hot-reload": "^1.0.6",
+    "universal-hot-reload": "hutber/universal-hot-reload",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-serve": "^0.2.0"

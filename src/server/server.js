@@ -19,7 +19,7 @@ app.use((req, res) => {
                         <title>Universal Hot Reload</title>
                       </head>
                       <body>
-                        <div id="reactDiv">${renderToString(
+                        <div id="wouldyourather">${renderToString(
                           <StaticRouter location={req.url} context={{}}>
                             <App />
                           </StaticRouter>
