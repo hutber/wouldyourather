@@ -15,8 +15,9 @@ app.use((req, res) => {
                     <html>
                       <head>
                         <meta charset="utf-8">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
                         <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <title>Universal Hot Reload</title>
+                        <title>Would You Rather</title>
                       </head>
                       <body>
                         <div id="wouldyourather">${renderToString(
@@ -32,8 +33,8 @@ app.use((req, res) => {
 });
 
 const httpServer = app.listen(PORT, () => {
-  console.log(`Example app listening at ${PORT}...`);
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
 
 // export httpServer object so universal-hot-reload can access it
-module.exports = httpServer;
+export default httpServer;
