@@ -5,7 +5,8 @@
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
-    "test": "razzle test --env=jsdom",
+    "test": "test --env=jsdom",
+    "test:watch": "razzle test --env=jsdom",
     "start:prod": "NODE_ENV=production node build/server.js",
     "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
     "lint-styles": "stylelint './src/**/*.css'",
