@@ -5,20 +5,27 @@ This site will be an aggregator
 
 
 ## Setup
+Getting setup with scripts
+`npm install stylelint -g`
+
 Install commitizen
 
-npm install -g commitizen
+`npm install -g commitizen`
 
-Install the hutber-conventional-changelog package.
+Using the command line tool
+Now, simply use git cz instead of git commit when committing.
 
-npm install --save-dev hutber-conventional-changelog
+Alternatively, if you are using NPM 5.2+ you can use npx instead of installing globally:
 
-Init commitizen configuration
+`npx git-cz`
+or as an `npm script`:
 
-commitizen init hutber-conventional-changelog --save-dev --save-exact
-
-Usage
-npm run commit
+```
+  ...
+  "scripts": {
+    "commit": "npx git-cz"
+  }
+```
 
 ## Eslint & Prettier 
 

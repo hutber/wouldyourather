@@ -1,23 +1,21 @@
 {
-  "name": "wouldyourather",
+  "name": "wouldyourather.co.uk",
   "version": "1.0.0",
-  "description": "The new wouldyourather.co.uk website source code`",
+  "private": true,
   "main": "src/server/index.js",
   "scripts": {
-    "start": "NODE_ENV=dev node src/server/index.js",
-    "serve": "webpack-serve webpack.config.server",
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom",
+    "start:prod": "NODE_ENV=production node build/server.js",
     "lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
     "lint-styles": "stylelint './src/**/*.css'",
     "lint": "npm run lint-scripts && npm run lint-styles",
     "postversion": "git push && git push --tags && npm publish",
     "preversion": "npm run lint && npm run test && npm run build",
     "precommit": "lint-staged",
-    "commit": "git-cz",
+    "commit": "npx git-cz",
     "prepush": "npm run test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hutber/wouldyourather.git"
   },
   "lint-staged": {
     "*.js": [
@@ -30,58 +28,37 @@
       "git add"
     ]
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/hutber/wouldyourather/issues"
   },
   "homepage": "https://www.wouldyourather.co.uk",
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/hutber-conventional-changelog"
-    }
-  },
   "dependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
-    "express": "^4.16.4",
-    "prop-types": "^15.6.1",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
-    "react-router-dom": "^4.2.2",
-    "webpack-config": "^7.5.0",
-    "webpack-node-externals": "^1.6.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.0.0",
-    "babel-loader": "^8.0.4",
-    "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^3.0.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.0.0",
-    "hutber-conventional-changelog": "^2.0.1",
-    "lint-staged": "^8.0.0",
-    "postcss-fontpath": "^1.0.0",
-    "postcss-load-config": "^2.0.0",
-    "postcss-loader": "^3.0.0",
-    "postcss-mixins": "^6.2.0",
-    "postcss-nested": "^4.0.0",
-    "postcss-simple-vars": "^5.0.0",
-    "postcss-strip-inline-comments": "^0.1.5",
+    "express": "4.16.4",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
-    "universal-hot-reload": "github:hutber/universal-hot-reload",
-    "webpack": "^4.25.1",
-    "webpack-cli": "^3.0.13",
-    "webpack-serve": "^2.0.0"
+    "prop-types": "^15.6.2",
+    "razzle": "2.4.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "stylelint": "^9.8.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

@@ -1,40 +1,47 @@
-/* eslint-disable no-console */
-import Express from 'express';
+import App from '../App';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import App from '../universal/app';
+import express from 'express';
+import { renderToString } from 'react-dom/server';
 
-const PORT = 3000;
-const app = Express();
+const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
-app.use('/dist', Express.static('dist', { maxAge: '1d' }));
+const server = express();
+server
+  .disable('x-powered-by')
+  .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
+  .get('/*', (req, res) => {
+    const context = {};
+    const markup = renderToString(
+      <StaticRouter context={context} location={req.url}>
+        <App />
+      </StaticRouter>
+    );
 
-app.use((req, res) => {
-  const html = `<!DOCTYPE html>
-                    <html>
-                      <head>
-                        <meta charset="utf-8">
-                        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
-                        <meta name="viewport" content="width=device-width, initial-scale=1">
-                        <title>Would You Rather</title>
-                      </head>
-                      <body>
-                        <div id="wouldyourather">${renderToString(
-                          <StaticRouter location={req.url} context={{}}>
-                            <App />
-                          </StaticRouter>
-                        )}</div>
-                        <script type="application/javascript" src="http://localhost:3002/dist/bundle.js"></script>
-                      </body>
-                    </html>`;
+    if (context.url) {
+      res.redirect(context.url);
+    } else {
+      res.status(200).send(
+        `<!doctype html>
+    <html lang="">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta charset="utf-8" />
+        <title>Welcome to Razzle</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        ${assets.client.css ? `<link rel="stylesheet" href="${assets.client.css}">` : ''}
+        ${
+          process.env.NODE_ENV === 'production'
+            ? `<script src="${assets.client.js}" defer></script>`
+            : `<script src="${assets.client.js}" defer crossorigin></script>`
+        }
+    </head>
+    <body>
+        <div id="root">${markup}</div>
+    </body>
+</html>`
+      );
+    }
+  });
 
-  res.end(html);
-});
-
-const httpServer = app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${PORT}`);
-});
-
-// export httpServer object so universal-hot-reload can access it
-export default httpServer;
+export default server;
