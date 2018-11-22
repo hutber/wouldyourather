@@ -2,7 +2,6 @@
   "name": "wouldyourather.co.uk",
   "version": "1.0.0",
   "private": true,
-  "main": "src/server/index.js",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
@@ -33,28 +32,34 @@
   },
   "homepage": "https://www.wouldyourather.co.uk",
   "dependencies": {
+    "@babel/preset-env": "^7.1.6",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
+    "express": "4.16.4",
+    "react": "^16.6.3",
+    "react-redux": "^5.0.4",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "express": "4.16.4",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.2",
     "prop-types": "^15.6.2",
-    "razzle": "2.4.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-router-dom": "^4.3.1",
+    "qs": "^6.5.2",
+    "razzle": "3.0.0-alpha.0",
+    "serialize-javascript": "^1.5.0",
     "stylelint": "^9.8.0",
     "stylelint-config-standard": "^18.2.0"
-  },
-  "devDependencies": {
-    "cz-conventional-changelog": "^2.1.0"
   },
   "config": {
     "commitizen": {
