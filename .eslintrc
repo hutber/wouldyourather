@@ -18,6 +18,21 @@
     "react"
   ],
   "rules": {
+    "no-console": "off",
+    "no-trailing-spaces": "error",
+    "quotes": [
+        "error",
+        "single"
+    ],
+    "semi": [
+        "error",
+        "never"
+    ],
+    "indent": [
+        "error",
+        "tab",
+        { "SwitchCase": 1 }
+    ],
     "strict": [2, "never"],
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
