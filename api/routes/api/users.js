@@ -32,6 +32,7 @@ router.post('/', auth.optional, (req, res) => {
 	const password = usersCore.saltAndHash(user.password)
 	finalUser.salt = password.salt
 	finalUser.hash = password.hash
+	finalUser.tAndCs = true
 
 	return finalUser.save().then(() => res.json({ user: usersCore.toAuthJSON(finalUser) }))
 })
