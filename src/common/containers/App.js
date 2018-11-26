@@ -1,17 +1,14 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import Counter from '../components/Counter';
-import * as CounterActions from '../actions';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { ConnectedRouter } from 'connected-react-router';
+import routes from '../routes';
 
-const mapStateToProps = state => ({
-  counter: state.counter
-});
+const App = ({ history }) => {
+  return <ConnectedRouter history={history}>{routes}</ConnectedRouter>;
+};
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(CounterActions, dispatch);
-}
+App.propTypes = {
+  history: PropTypes.object
+};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter);
+export default App;

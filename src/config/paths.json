@@ -1,0 +1,47 @@
+{
+  "order": {
+    "summary": "/order/summary",
+    "edit": "/order/edit",
+    "updated": "/order/updated",
+    "complete": "/order/complete"
+  },
+  "profile":{
+    "home": "/profile"
+  },
+  "registration":{
+    "introduction": "/registration/introduction",
+    "childsdetails": "/registration/childsdetails",
+    "gettingstarted": "/registration/gettingstarted",
+    "yourdetails": "/registration/yourdetails",
+    "security": "/registration/security",
+    "termsandconditions": "/registration/termsandconditions",
+    "kyc": {
+      "fail": "/registration/kyc/fail",
+      "loading": "/registration/kyc/loading"
+    }
+  },
+  "signin":{
+    "selector":"/signin/selector",
+    "giverSignin":"/signingive",
+    "home":"/signin",
+    "forgotUsername": "/signin/forgot/username",
+    "forgotPassword": "/signin/forgot/password"
+  },
+  "signout":{
+    "home":"/signout"
+  },
+  "help":{
+    "help": "/help"
+  },
+  "dashboards":{
+    "home":"/dashboard",
+    "children":"/dashboard/children/",
+    "childrenDynamic":"/dashboard/children/:child",
+    "gifters": {
+      "invite":"/dashboard/gifters/invite",
+      "selectChildren":"/dashboard/gifters/children/",
+      "manage": "/dashboard/gifters/manage"
+    }
+  },
+  "repurchase": "/"
+}

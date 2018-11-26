@@ -1,0 +1,10 @@
+{
+  "anon_api_base_url": "https://tm6akmuiwj.execute-api.eu-west-1.amazonaws.com/stage",
+  "contis_connect_api_base_url": "https://api.digitaltest.xyz/pr-feature-dpib-279-contis/stage/",
+  "mlp_connect_api_base_url": "https://api.digitaltest.xyz/pr-feature-dpib-279-mlp_connect/stage/",
+  "mock_api_base_url": "https://tko6ozczx0.execute-api.eu-west-1.amazonaws.com/stage",
+  "order_completion_api_base_url": "https://c43gay49zd.execute-api.eu-west-1.amazonaws.com/stage",
+  "private_frontend_api_base_url": "https://t4x4ln2t0e.execute-api.eu-west-1.amazonaws.com/stage",
+  "public_frontend_api_base_url": "https://gbuzn5n8ef.execute-api.eu-west-1.amazonaws.com/stage",
+  "www_bucket_name": "www.pr-feature-dpib-279.digitaltest.xyz"
+}

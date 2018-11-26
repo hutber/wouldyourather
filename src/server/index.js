@@ -7,6 +7,7 @@ import { fetchCounter } from '../common/api/counter';
 import qs from 'qs';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
+import history from '../common/history';
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
@@ -25,12 +26,12 @@ server
       const preloadedState = { counter };
 
       // Create a new Redux store instance
-      const store = configureStore(preloadedState);
+      const store = configureStore(preloadedState, history);
 
       // Render the component to a string
       const markup = renderToString(
         <Provider store={store}>
-          <App />
+          <App history={history} />
         </Provider>
       );
 
