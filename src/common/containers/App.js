@@ -1,14 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ConnectedRouter } from 'connected-react-router';
-import routes from '../routes';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ConnectedRouter } from 'connected-react-router'
+import routes from '../routes'
+import { Router } from 'react-router-dom'
 
 const App = ({ history }) => {
-  return <ConnectedRouter history={history}>{routes}</ConnectedRouter>;
-};
+	return (
+		<ConnectedRouter history={history}>
+			<Router history={history}>{routes}</Router>
+		</ConnectedRouter>
+	)
+}
 
 App.propTypes = {
-  history: PropTypes.object
-};
+	history: PropTypes.object
+}
 
-export default App;
+export default App

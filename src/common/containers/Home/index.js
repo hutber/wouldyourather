@@ -1,23 +1,23 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as CounterActions from '../../actions';
+import React from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as CounterActions from '../../actions'
 
 class Component extends React.PureComponent {
-  state = {};
+	state = {}
 
-  render() {
-    return <h1>Would You Rater</h1>;
-  }
+	render() {
+		return <h1>Would You Rather</h1>
+	}
 }
 
 const mapStateToProps = state => ({
-  counter: state.counter
-});
+	counter: state.counter
+})
 
-const mapDispatchToProps = dispatch => bindActionCreators(CounterActions, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators(CounterActions, dispatch)
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Component);
+	mapStateToProps,
+	mapDispatchToProps
+)(Component)

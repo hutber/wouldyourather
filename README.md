@@ -1,10 +1,11 @@
 # Would You Rather
+
 The game where pick between 2 awful ideas...
 
-This site will be an aggregator 
-
+This site will be an aggregator
 
 ## Setup
+
 Getting setup with scripts
 `npm install stylelint -g`
 
@@ -27,8 +28,8 @@ or as an `npm script`:
   }
 ```
 
-## Eslint & Prettier 
+## Eslint & Prettier
 
-The project is using stnadrd eslint with some extra rules. Similarly with Prettier and some custom rules both found in their `rc` files. 
+The project is using stnadrd eslint with some extra rules. Similarly with Prettier and some custom rules both found in their `rc` files.
 
-Both these linters get automatically ran when we commit to the project using commitizen. 
+Both these linters get automatically ran when we commit to the project using commitizen.

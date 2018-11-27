@@ -1,14 +1,17 @@
-import createBrowserHistory from 'history/createBrowserHistory';
-import createMemoryHistory from 'history/createMemoryHistory';
+import createBrowserHistory from 'history/createBrowserHistory'
+import createMemoryHistory from 'history/createMemoryHistory'
 
-let history;
-let createHistory;
+let history
+let createHistory
+let type
 
 if (typeof document !== 'undefined') {
-  createHistory = createBrowserHistory;
+	createHistory = createBrowserHistory
+	type = 'createBrowserHistory'
 } else {
-  createHistory = createMemoryHistory;
+	createHistory = createMemoryHistory
+	type = 'createMemoryHistory'
 }
-history = createHistory();
+history = createHistory()
 
-export default history;
+export { history, type }
