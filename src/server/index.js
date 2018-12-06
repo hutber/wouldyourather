@@ -4,10 +4,9 @@ import React from 'react'
 import configureStore from '../common/configureStore'
 import express from 'express'
 import { fetchCounter } from '../common/api/counter'
-import qs from 'qs'
+// import qs from 'qs'
 import { renderToString } from 'react-dom/server'
 import serialize from 'serialize-javascript'
-import createStore from '../common/configureStore'
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST)
 
@@ -19,14 +18,14 @@ server
 	.get('/*', (req, res) => {
 		fetchCounter(apiResult => {
 			// Read the counter from the request, if provided
-			const params = qs.parse(req.query)
-			const counter = parseInt(params.counter, 10) || apiResult || 0
+			// const params = qs.parse(req.query)
+			// const counter = parseInt(params.counter, 10) || apiResult || 0
 
 			// Compile an initial state
-			const preloadedState = { counter }
+			// const preloadedState = { counter }
 
 			// Create a new Redux store instance
-      const { store, history } = createStore(req.url)
+			const { store, history } = configureStore(req.url)
 
 			// Render the component to a string
 			const markup = renderToString(

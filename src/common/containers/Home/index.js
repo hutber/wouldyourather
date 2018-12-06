@@ -1,23 +1,40 @@
-import React from 'react'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import * as CounterActions from '../../actions'
+import React, { Fragment } from 'react'
+import PropTypes from 'prop-types'
 
-class Component extends React.PureComponent {
-	state = {}
+//Material UI
+import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import { defaultTheme } from '../../components/themes'
 
+//Styles
+import './style.css'
+
+class GuttersGrid extends React.Component {
 	render() {
-		return <h1>Would You Rather</h1>
+		const { classes } = this.props
+
+		return (
+			<Fragment>
+				<section className="content">
+					<Grid container className={classes.root}>
+						<Grid item xs={4}>
+							One
+						</Grid>
+						<Grid item xs={4}>
+							two
+						</Grid>
+						<Grid item xs={4}>
+							three
+						</Grid>
+					</Grid>
+				</section>
+			</Fragment>
+		)
 	}
 }
 
-const mapStateToProps = state => ({
-	counter: state.counter
-})
+GuttersGrid.propTypes = {
+	classes: PropTypes.object.isRequired
+}
 
-const mapDispatchToProps = dispatch => bindActionCreators(CounterActions, dispatch)
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(Component)
+export default withStyles(defaultTheme)(GuttersGrid)
