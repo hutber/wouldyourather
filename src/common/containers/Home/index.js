@@ -4,10 +4,7 @@ import PropTypes from 'prop-types'
 //Material UI
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import { defaultTheme } from '../../components/themes'
-
-//Styles
-import './style.css'
+import styles from './style'
 
 class GuttersGrid extends React.Component {
 	render() {
@@ -15,8 +12,8 @@ class GuttersGrid extends React.Component {
 
 		return (
 			<Fragment>
-				<section className="content">
-					<Grid container className={classes.root}>
+				<section className={classes.content}>
+					<Grid container className={classes.grid}>
 						<Grid item xs={4}>
 							One
 						</Grid>
@@ -37,4 +34,4 @@ GuttersGrid.propTypes = {
 	classes: PropTypes.object.isRequired
 }
 
-export default withStyles(defaultTheme)(GuttersGrid)
+export default withStyles(styles)(GuttersGrid)

@@ -1,4 +1,4 @@
-import App from '../common/containers/App'
+import App from '../common/App'
 import { Provider } from 'react-redux'
 import React from 'react'
 import configureStore from '../common/configureStore'
