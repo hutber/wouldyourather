@@ -5,7 +5,8 @@ export default theme => ({
 		background: 'var(--viewportColour)',
 		color: 'var(--base)',
 		height: '100vh',
-		width: '100vw'
+		width: '100vw',
+		overflow: 'hidden'
 	},
 	grid: {
 		...defaultTheme.root
