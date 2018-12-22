@@ -6,7 +6,8 @@
 		"start": "razzle start",
 		"build": "razzle build",
 		"api": "nodemon ./api/app.js",
-		"test": "test --env=jsdom",
+		"test": "jest test --env=jsdom  --colors --watch",
+		"report": "jest test --env=jsdom  --colors --coverage",
 		"test:watch": "razzle test --env=jsdom",
 		"start:prod": "NODE_ENV=production node build/server.js",
 		"lint-scripts": "eslint './{src/**,test/**,config/**,.}/*.js'",
@@ -41,6 +42,7 @@
 		"body-parser": "^1.18.3",
 		"boom": "^7.2.2",
 		"cors": "^2.8.4",
+		"enzyme-adapter-react-16": "^1.7.1",
 		"errorhandler": "^1.5.0",
 		"express": "4.16.4",
 		"express-boom": "^2.0.0",
@@ -58,6 +60,7 @@
 		"react-redux": "^5.0.4",
 		"react-router-dom": "^4.3.1",
 		"react-router-scroll-top": "^0.1.1",
+		"react-test-renderer": "^16.7.0",
 		"redux": "^3.6.0",
 		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.2.0",
@@ -66,6 +69,8 @@
 	"devDependencies": {
 		"connected-react-router": "^4.3.0",
 		"cz-conventional-changelog": "^2.1.0",
+		"enzyme": "^3.8.0",
+		"enzyme-to-json": "^3.3.5",
 		"eslint-config-airbnb": "^17.1.0",
 		"eslint-config-prettier": "^3.3.0",
 		"eslint-plugin-import": "^2.14.0",
@@ -73,6 +78,7 @@
 		"eslint-plugin-prettier": "^3.0.0",
 		"eslint-plugin-react": "^7.11.1",
 		"husky": "^1.2.0",
+		"jest": "^23.6.0",
 		"lint-staged": "^8.1.0",
 		"prettier": "^1.15.2",
 		"prop-types": "^15.6.2",
@@ -86,5 +92,11 @@
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
 		}
+	},
+	"snapshotSerializers": [
+		"enzyme-to-json/serializer"
+	],
+	"jest": {
+		"setupFiles": ["<rootDir>src/setupTests.js"]
 	}
 }

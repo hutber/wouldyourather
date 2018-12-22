@@ -8,6 +8,7 @@ import styles from './style'
 
 //Components
 import Question from '../../components/Question'
+import Menu from '../../components/Menu'
 
 class GuttersGrid extends React.Component {
 	render() {
@@ -23,7 +24,7 @@ class GuttersGrid extends React.Component {
 						<Question />
 					</Grid>
 					<Grid item xs={4}>
-						three
+						<Menu />
 					</Grid>
 				</Grid>
 			</section>
