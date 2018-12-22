@@ -6,7 +6,7 @@
 		"start": "razzle start",
 		"build": "razzle build",
 		"api": "nodemon ./api/app.js",
-		"test": "jest test --env=jsdom  --colors --watch",
+		"test": "jest test --env=jsdom  --colors",
 		"report": "jest test --env=jsdom  --colors --coverage",
 		"test:watch": "razzle test --env=jsdom",
 		"start:prod": "NODE_ENV=production node build/server.js",
