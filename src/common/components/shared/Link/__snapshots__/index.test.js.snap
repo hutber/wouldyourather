@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add New button renders add new button properly 1`] = `
+<GuttersGrid
+  classes={
+    Object {
+      "content": "GuttersGrid-content-1",
+    }
+  }
+  text="You can add 2 more children"
+  to="/home"
+/>
+`;
