@@ -45,6 +45,7 @@
     "import/prefer-default-export": "off",
     "linebreak-style": "off",
     "prettier/prettier": "error",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "no-unused-vars": "off"
   }
 }
